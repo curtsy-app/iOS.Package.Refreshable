@@ -8,11 +8,11 @@
 import SwiftUI
 
 
-struct RefreshAction {
+public struct RefreshAction {
 	
 	let action: () async -> Void
 	
-	func callAsFunction() async {
+	public func callAsFunction() async {
 		await action()
 	}
 }
@@ -24,7 +24,7 @@ struct RefreshActionKey: EnvironmentKey {
 }
 
 
-extension EnvironmentValues {
+public extension EnvironmentValues {
 	
 	var refresh: RefreshAction? {
 		get { self[RefreshActionKey.self] }
